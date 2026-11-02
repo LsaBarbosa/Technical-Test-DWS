@@ -1,0 +1,20 @@
+server:
+  port: 8080
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  application:
+    name: bands-api
+
+bands:
+  api:
+    url: ${BANDS_API_URL:https://bands-api.vercel.app/api/bands}
+    connect-timeout: ${BANDS_API_CONNECT_TIMEOUT:2s}
+    read-timeout: ${BANDS_API_READ_TIMEOUT:5s}
+  cache:
+    ttl: ${BANDS_CACHE_TTL:5m}
+    maximum-size: ${BANDS_CACHE_MAXIMUM_SIZE:100}
